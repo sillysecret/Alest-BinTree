@@ -4,6 +4,10 @@ public class tree{
     public tree(){
         root = null;
     } 
+
+    public node getRoot(){
+        return root;
+    }
     
     public void insert(int item){
         node newNode = new node();
@@ -37,5 +41,30 @@ public class tree{
 
         
 }
+       
 }
+                    public void printTree(node root){
+                        if(root!=null){
+                            printTree(root.left);
+                            System.out.println(root.data);
+                            printTree(root.right);
+                        } 
+                    }  
+
+                public boolean search(int key){
+                    node current = root;
+
+                            while(key!=current.data){
+                                if(key<current.data){
+                                    current = current.left;
+                            }else{
+                                current = current.right;
+                            }
+                            if(current==null){
+                                return false;
+                            }
+                            
+             }
+                            return true;
+                }
 }
